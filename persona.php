@@ -10,7 +10,7 @@
         public function __construct($pApellido,$pDni,$pNombre,$pSexo)
         {
             $this->_apellido=$pApellido;
-            $this->_dni?$pDni;
+            $this->_dni=$pDni;
             $this->_nombre=$pNombre;
             $this->_sexo=$pSexo;
         }
@@ -35,14 +35,11 @@
             return $this->_sexo;
         }
 
-        public abstract function Hablar($pIdioma)
-        {
-
-        }
+        public abstract function Hablar($pIdioma);
 
         public function ToString()
         {
-            return "$this->_nombre - $this->_apellido - $this->_edad - $this->_sexo <br>";
+            return "$this->_nombre - $this->_apellido - $this->_dni - $this->_sexo";
         }
     }
 

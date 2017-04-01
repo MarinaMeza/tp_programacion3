@@ -22,9 +22,9 @@
             return $this->_sueldo;
         }
 
-        public function Hablar()
+        public function Hablar($pIdioma)
         {
-
+            return "El empleado habla ".$pIdioma;
         }
 
         public function ToString()
