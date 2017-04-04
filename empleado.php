@@ -29,7 +29,7 @@
 
         public function ToString()
         {
-            return parent::ToString()." - $this->_legajo - $this->_sueldo <br>";
+            return parent::ToString()." - $this->_legajo - $this->_sueldo";
         }
     }
 
