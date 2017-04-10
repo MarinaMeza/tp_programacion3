@@ -9,6 +9,7 @@
         {
             $this->_razonSocial=$pRazonSocial;
             $this->_empleados=array();
+            $this->TraerFabrica();
         }
 
         public function AgregarEmpleado($pEmpleado)
@@ -32,19 +33,20 @@
             }
         }
 
-        private function EliminarEmpleadosRepetidos()
+        public function EliminarEmpleadosRepetidos()
         {
-
+            
         }
 
         public function ToString()
         {
+            $auxString="";
 
             foreach ($this->_empleados as $key)
             {
-                echo $key->ToString();
-                echo " - ";
+                $auxString=$auxString.$key->ToString()."<br>";
             }
+            return $auxString;
         }
 
         public function GuardarFabrica()
@@ -59,13 +61,19 @@
         public function TraerFabrica()
         {
             $file=fopen("fabrica.txt","r");
-            $arrayFabrica=array();
+            $arrayAux=array();
             while(!feof($file))
             {
                 $linea=fgets($file);
-                array_push($arrayFabrica,explode(" - ",$linea));
+                $arrayAux=explode(" - ",$linea);
+                if($arrayAux[0]!="")
+                {
+                    $empleado=new Empleado($arrayAux[0],$arrayAux[1],$arrayAux[2],$arrayAux[3],$arrayAux[4],$arrayAux[5]);
+                    array_push($this->_empleados,$empleado);
+                }
             }
-            //var_dump($arrayFabrica);
+            fclose($file);
+            //var_dump($arrayAux);
             
         }
   }

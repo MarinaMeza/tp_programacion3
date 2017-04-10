@@ -13,14 +13,16 @@
     echo $nuevoEmpleado1->Hablar(" Ingles");*/
 
     $miFabrica = new Fabrica("FabricaSA");
-    
+    /*
     $miFabrica->AgregarEmpleado($nuevoEmpleado1);
     $miFabrica->AgregarEmpleado($nuevoEmpleado2);
     $miFabrica->AgregarEmpleado($nuevoEmpleado3);
     $miFabrica->AgregarEmpleado($nuevoEmpleado4);
-    $miFabrica->AgregarEmpleado($nuevoEmpleado5);
+    $miFabrica->AgregarEmpleado($nuevoEmpleado5);*/
     //echo $miFabrica->ToString();
     
     //$miFabrica->GuardarFabrica();
     $miFabrica->TraerFabrica();
+    echo $miFabrica->ToString();
+    $miFabrica->EliminarEmpleadosRepetidos();
 ?>
